@@ -22,4 +22,5 @@ export default defineConfig({
       },
     },
   },
+  base: '/portfolio_thtndev1611/'
 });
