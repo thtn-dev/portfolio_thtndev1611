@@ -38,7 +38,7 @@ const NavLink = ({ children }) => {
         textDecoration: 'none',
         color: useColorModeValue('gray.600', 'gray.300'),
       }}
-      href={'#'}
+      href={'#about'}
     >
       {children}
     </Link>
@@ -53,13 +53,14 @@ const Header = () => {
     <Box
       bg={useColorModeValue('white', 'gray.800')}
       px={2}
-      boxShadow={'rgba(50, 50, 93, 0.125) 0px 1px 2px -1px, rgba(0, 0, 0, 0.125) 0px 1px 2px -1px'}
+      boxShadow={useColorModeValue('rgba(50, 50, 93, 0.125) 0px 1px 2px -1px, rgba(0, 0, 0, 0.125) 0px 1px 2px -1px', 'none')}
       position={'sticky'}
       top={0}
       left={0}
       as={'header'}
       display={'flex'}
       justifyContent={'center'}
+      borderBottom={useColorModeValue('none', '1px solid #F6E05E')}
     >
       <Grid
         templateColumns={{ base: '1fr 0fr auto', md: 'auto 2fr 0fr' }}

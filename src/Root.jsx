@@ -9,7 +9,7 @@ const root = createRoot(container);
 export function render(App) {
   root.render(
     <StrictMode>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <App />
       </ChakraProvider>

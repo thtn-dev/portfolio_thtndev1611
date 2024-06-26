@@ -1,11 +1,13 @@
-import { Box } from '@chakra-ui/react';
+import About from '@/components/sections/About';
+import Hello from '@/components/sections/Hello';
+import { Fragment } from 'react';
 
 function Home() {
   return (
-    <Box h={'1200px'}>
-      <h1>Home</h1>
-      <p>Welcome to the Home page</p>
-    </Box>
+    <Fragment>
+      <Hello />
+      <About />
+    </Fragment>
   );
 }
 
