@@ -1,10 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import 'sanitize.css';
+import { withErrorHandler } from './error_handling';
+import AppErrorFallback from './error_handling/AppErrorFallback';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+Promise.all([import('@/Root.jsx'), import('@/App.jsx')]).then(([Root, { default: App }]) => {
+  Root.render(withErrorHandler(App, AppErrorFallback));
+});
