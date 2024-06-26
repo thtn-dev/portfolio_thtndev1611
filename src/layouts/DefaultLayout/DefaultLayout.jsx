@@ -8,7 +8,7 @@ function DefaultLayout({ children }) {
   return (
     <>
       <Header></Header>
-      <Content>{children}</Content>
+      {/* <Content>{children}</Content> */}
       <Footer />
     </>
   );

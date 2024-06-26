@@ -31,7 +31,7 @@ const NavLink = ({ children }) => {
     <Link
       px={2}
       py={1}
-      fontSize={'lg'}
+      fontSize={'md'}
       fontWeight={400}
       rounded={'md'}
       _hover={{
@@ -53,7 +53,10 @@ const Header = () => {
     <Box
       bg={useColorModeValue('white', 'gray.800')}
       px={2}
-      boxShadow={useColorModeValue('rgba(50, 50, 93, 0.125) 0px 1px 2px -1px, rgba(0, 0, 0, 0.125) 0px 1px 2px -1px', 'none')}
+      boxShadow={useColorModeValue(
+        'rgba(50, 50, 93, 0.125) 0px 1px 2px -1px, rgba(0, 0, 0, 0.125) 0px 1px 2px -1px',
+        'none'
+      )}
       position={'sticky'}
       top={0}
       left={0}
@@ -65,10 +68,12 @@ const Header = () => {
       <Grid
         templateColumns={{ base: '1fr 0fr auto', md: 'auto 2fr 0fr' }}
         alignItems="center"
+        gap={2}
         h={16}
         w={{
           base: '100%',
-          md: 'calc(100% - 32rem)',
+          md: 'calc(100% - 14rem)',
+          lg: 'calc(100% - 20rem)',
         }}
       >
         <GridItem>
@@ -79,14 +84,15 @@ const Header = () => {
             display={'flex'}
           >
             <Image
+              minW={32}
               src={useColorModeValue(LogoLight, LogoDark)}
               alt="App Logo"
-              h={{ base: 10, md: 12 }}
+              h={{ base: 8, md: 10 }}
             />
           </Box>
         </GridItem>
         <GridItem display={{ base: 'none', md: 'block' }}>
-          <Flex justifyContent="flex-end" gap={1} alignContent={'center'} alignItems={'center'}>
+          <Flex justifyContent="flex-end" alignContent={'center'} alignItems={'center'}>
             {Links.map(link => (
               <NavLink key={link}>{link}</NavLink>
             ))}
@@ -104,7 +110,7 @@ const Header = () => {
             size="md"
             icon={<FontAwesomeIcon size="xl" icon={faBars} />}
             aria-label="Toggle Menu"
-            fontSize={'lg'}
+            fontSize={'md'}
             onClick={onOpen}
             color={'blue.700'}
             px={4}
