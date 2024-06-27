@@ -5,25 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 
 function ScrollToTop() {
-  var scrolled = useScroll(120);
+  var scrolled = useScroll(100);
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const BoxMotion = motion(Box);
   return (
     <BoxMotion
-      h={12}
-      w={12}
+      h={10}
+      w={10}
       pos="fixed"
       right={6}
-      bottom={12}
+      bottom={10}
       display={scrolled ? 'flex' : 'none'}
       bg="blue.900"
       borderRadius="md"
       onClick={handleClick}
       cursor={'pointer'}
       backdropFilter={'blur(10px)'}
-      opacity={0.8}
       justifyContent="center"
       alignItems="center"
       color={'white'}
@@ -31,7 +30,7 @@ function ScrollToTop() {
         bg: 'blue.800',
       }}
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: scrolled ? 1 : 0, y: scrolled ? 0 : 20 }}
+      animate={{ opacity: scrolled ? 0.8 : 0, y: scrolled ? 0 : 20 }}
       transition={{ duration: 0.3 }}
     >
       <FontAwesomeIcon icon={faArrowUp} size="xl" />

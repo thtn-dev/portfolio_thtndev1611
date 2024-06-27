@@ -51,6 +51,7 @@ const Header = () => {
 
   return (
     <Box
+      zIndex={999}
       bg={useColorModeValue('white', 'gray.800')}
       px={2}
       boxShadow={useColorModeValue(
@@ -87,7 +88,7 @@ const Header = () => {
               minW={32}
               src={useColorModeValue(LogoLight, LogoDark)}
               alt="App Logo"
-              h={{ base: 8, md: 10 }}
+              h={{ base: 10, md: 10 }}
             />
           </Box>
         </GridItem>
